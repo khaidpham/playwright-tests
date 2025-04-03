@@ -4,6 +4,12 @@ test.describe('Home page', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://practicesoftwaretesting.com/');
   });
+
+  test('visual test', async ({ page }) => {
+    // Verify screenshot
+    await expect(page).toHaveScreenshot('homepage.png')
+  });
+  
   test('check sign in link', async ({ page }) => {
     // Check Sing In link is present
     await expect(page.getByTestId('nav-sign-in')).toHaveText('Sign in');
