@@ -7,9 +7,11 @@ test.describe('Home page', () => {
 
   test('visual test', async ({ page }) => {
     // Verify screenshot
-    await expect(page).toHaveScreenshot('homepage.png')
+    await expect(page).toHaveScreenshot('homepage.png', {
+      mask: [page.getByTitle('Practice Software Testing - Toolshop')],
+    })
   });
-  
+
   test('check sign in link', async ({ page }) => {
     // Check Sing In link is present
     await expect(page.getByTestId('nav-sign-in')).toHaveText('Sign in');
