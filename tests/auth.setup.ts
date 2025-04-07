@@ -19,6 +19,6 @@ setup('Create customer 01 auth', async ({page, context}) => {
     // check logged in user info
     await expect(page.getByTestId('nav-menu')).toContainText('Jane Doe');
 
-    // save auth
+    // save authentication state
     await context.storageState({ path: customer01AuthFile });
 });
