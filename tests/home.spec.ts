@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Home page', () => {
+test.describe('Home page no auth', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://practicesoftwaretesting.com/');
   });
@@ -31,5 +31,16 @@ test.describe('Home page', () => {
   test('visual test', async ({ page }) => {
     // Verify screenshot
     await expect(page).toHaveScreenshot('homepage.png');
+  });
+});
+test.describe('Home page customer 01 auth', () => {
+  test.use({ storageState: '.auth/customer01.json'  });
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://practicesoftwaretesting.com/');
+  });
+
+  test('check signed in customer info', async ({ page }) => {
+    // Check Signed in customer info
+    await expect(page.locator('[data-test="nav-menu"]')).toContainText('Jane Doe')
   });
 });
