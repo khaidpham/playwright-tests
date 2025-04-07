@@ -5,13 +5,6 @@ test.describe('Home page', () => {
     await page.goto('https://practicesoftwaretesting.com/');
   });
 
-  test('visual test', async ({ page }) => {
-    // Verify screenshot
-    await expect(page).toHaveScreenshot('homepage.png', {
-      mask: [page.getByTitle('Practice Software Testing - Toolshop')],
-    })
-  });
-
   test('check sign in link', async ({ page }) => {
     // Check Sing In link is present
     await expect(page.getByTestId('nav-sign-in')).toHaveText('Sign in');
@@ -33,5 +26,10 @@ test.describe('Home page', () => {
     await page.getByTestId('search-query').fill('Thor Hammer');
     await page.getByTestId('search-submit').click();
     await expect(page.getByTestId('search-caption')).toHaveText('Searched for: Thor Hammer');
+  });
+
+  test('visual test', async ({ page }) => {
+    // Verify screenshot
+    await expect(page).toHaveScreenshot('homepage.png');
   });
 });
