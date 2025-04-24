@@ -16,7 +16,11 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
     "@playwright/test": "^1.51.1",
-    "@types/node": "^22.13.14"
+    "@types/node": "^22.14.1"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3"
   }
 }

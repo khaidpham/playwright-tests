@@ -42,14 +42,14 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      /* Run all *.setup.ts files when call */
-      name: 'setup',
-      testMatch: /.*\.setup\.ts/,
-    },
+    // {
+    //   /* Run all *.setup.ts files when call */
+    //   name: 'setup',
+    //   testMatch: /.*\.setup\.ts/,
+    // },
     {
       name: 'chromium',
-      dependencies: ['setup'], // run setup before each test on chromium
+      // dependencies: ['setup'], // run setup before each test on chromium
       use: { ...devices['Desktop Chrome'], permissions: ['clipboard-read'] },
     },
 
