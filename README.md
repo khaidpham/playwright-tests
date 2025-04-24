@@ -19,15 +19,15 @@ This project contains a robust suite of automated end-to-end and API tests using
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
-
+```
 git clone https://github.com/khaidpham/playwright-tests.git
 cd playwright-tests
-
-npm install
+```
 
 ### 2. Install dependencies
-
+```
 npm install
+```
 
 ### 3. Run tests using npm scripts
 
@@ -49,6 +49,7 @@ npm install
 - `npx playwright test tests/home.spec.ts --debug` -- debug a specific test 
 
 ### 6. Project Structure
+```
 playwright-tests/
 ├── tests/                             # All test specs and setup files
 │   ├── auth.setup.ts                  # Reusable authentication session
@@ -64,19 +65,19 @@ playwright-tests/
 ├── playwright.config.ts               # Playwright test runner configuration
 ├── tsconfig.json                      # TypeScript configuration
 └── README.md                          # Project documentation
-
+```
 
 ### 🔗 API Testing Sample
-
+```
 const response = await apiContext.post('/post', {
   data: { message: 'Hello, Playwright!' }
 });
 expect(response.status()).toBe(200);
 expect(await response.json()).toMatchObject({ data: { message: 'Hello, Playwright!' } });
-
+```
 ## 👨‍💻 Maintainer
 Built and maintained by Khai Pham —
-QA Engineer | SDET | Automation Architect
+QA Engineer | SDET | Test Automation Architect
 
-💼 [@khaidpham](https://github.com/khaidpham) - khaipham@gmail.com
+💼 [@khaidpham](https://github.com/khaidpham)  
 🔗 [LinkedIn](https://www.linkedin.com/in/khaidpham/)
