@@ -30,11 +30,11 @@ test.describe('Home page', () => {
     await page.getByTestId('search-submit').click();
     await expect(page.getByTestId('search-caption')).toHaveText('Searched for: Thor Hammer');
     const searchResults = page.locator('a.card');
-    console.info('searchResults', searchResults);
+    // console.info('searchResults', searchResults);
     await expect(searchResults).toHaveCount(1);
     // Check the count of items on the page
     const results = await page.$$('[data-test="product-name"]');
-    console.info('results', results);
+    // console.info('results', results);
     expect(results.length).toBeGreaterThan(0);
     // Check the first result contains 'hammer'
     const firstResultText = await results[0].textContent();

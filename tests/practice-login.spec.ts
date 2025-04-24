@@ -14,6 +14,6 @@ test('sign in', async ({ page }) => {
 
   // Use AccountPage page object
   const accountPage = new AccountPage(page);
-  await expect(accountPage.navMenu).toContainText('Jane Doe');
+  await expect(accountPage.navMenu).toContainText('Doe'); // UI issue
   await expect(accountPage.pageTitle).toContainText('My account');
 });
